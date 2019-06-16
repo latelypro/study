@@ -1,5 +1,5 @@
 a=int(input())  #数値入力
-a,b=map(int, input().split())  #複数数値入力
+a,b=c #複数数値入力
 c=list(map(int, input().split()))  #リスト入力
 s=[list(map(int,list(input()))) for i in range(h)]  # 二次元配列入力
 

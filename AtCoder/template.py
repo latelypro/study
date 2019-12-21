@@ -1,8 +1,7 @@
 a=int(input())  #数値入力
-a,b=c #複数数値入力
+a,b=map(int, input().split()) #複数数値入力
 c=list(map(int, input().split()))  #リスト入力
 s=[list(map(int,list(input()))) for i in range(h)]  # 二次元配列入力
-
 a=100
 b=0.987654321
 print('{0:06d}-{1:6f}'.format(a,b))  # 0埋め
@@ -84,3 +83,28 @@ while n!=0:
     if k<0:n=-(-n//k)
     else:n=n//k
 print(bi[::-1])
+
+ # 約数列挙
+def make_divisors(n):
+    divisors = []
+    for i in range(1, int(n**0.5)+1):
+        if n % i == 0:
+            divisors.append(i)
+            if i != n // i:
+                divisors.append(n//i)
+
+    # divisors.sort()
+    return divisors
+
+from operator import mul
+from functools import reduce
+
+def combinations_count(n, r):
+    r = min(r, n - r)
+    numer = reduce(mul, range(n, n - r, -1), 1)
+    denom = reduce(mul, range(1, r + 1), 1)
+    return numer // denom
+
+# 二重配列の要素でそーと
+items = [[1,2],[2,3]]
+sorted(items, key=lambda x: x[1])

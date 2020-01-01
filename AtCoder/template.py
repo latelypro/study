@@ -27,6 +27,32 @@ for i in range(2, int(n**0.5+1)):
     primes.difference_update(range(i*2, n+1, i))
 primes=list(primes)
 
+pn=[2];A=1000
+for L in range(3,A):
+    chk=True
+    for L2 in pn:
+        if L%L2 == 0:chk=False
+    if chk==True:pn.append(L)
+print(pn)
+
+# 素数判定関数
+def isPrime(num):
+    # 2未満の数字は素数ではない
+    if num < 2: return False
+    # 2は素数
+    elif num == 2: return True
+    # 偶数は素数ではない
+    elif num % 2 == 0: return False
+
+    # 3 ~ numまでループし、途中で割り切れる数があるか検索
+    # 途中で割り切れる場合は素数ではない
+    for i in range(3, math.floor(math.sqrt(num))+1, 2):
+        if num % i == 0:
+            return False
+
+    # 素数
+    return True
+
 #二重ループ
 n,y=1000, 1234000
 for i in range(n+1):

@@ -1,0 +1,75 @@
+{
+	// Place your AtCoder ワークスペース snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"input" :{
+		"prefix" : "inp",
+		"body" : [
+			"${1:S}=input()"
+		]
+	},
+	"int input" : {
+		"prefix" : "iinp",
+		"body" : [
+			"${1:N}=int(input())"
+		]
+	},
+	"map for 2 value" : {
+		"prefix" : "2map",
+		"body" : [
+			"${1:A},${2:B}=map(int, input().split())"
+		]
+	},
+	"map for 3 value" : {
+		"prefix" : "3map",
+		"body" : [
+			"${1:A},${2:B},${3:C}=map(int, input().split())"
+		]
+	},
+	"list input" : {
+		"prefix" : "lin",
+		"body" : [
+			"${1:items}=list(map(int, input().split()))"
+		]
+	},
+	"list comprehension" : {
+		"prefix" : "lcom",
+		"body" : [
+			"${1:items}=[input() for i in range(N)]"
+		]
+	},
+	"reverse sort" : {
+		"prefix" : "rsort",
+		"body" : ["${1:items}.sort(reverse=True)"]
+	},
+	"use lamda sort" : {
+		"prefix" : "lsort",
+		"body" : ["${1:items}.sort(key=lambda x:x[1],reverse=True)"]
+	},
+	"divisors" :{
+		"prefix" : "div",
+		"body" : [
+			"def make_divisors(n): ",
+			"	divisors = []",
+			"	for i in range(1, int(n**0.5)+1):",
+			"		if n % i == 0:",
+			"			divisors.append(i)",
+			"			if i != n // i:",
+			"				divisors.append(n//i)",
+			"	# divisors.sort()",
+			"	return divisors"]
+	}
+}
